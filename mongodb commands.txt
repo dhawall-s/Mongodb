@@ -1,0 +1,74 @@
+Features of Mongodb
+1.Understanding the significance of MongoDB in full-stack development and its effortless interaction with other technologies is essential.
+2.Compass Tool: Exploring MongoDB Compass allows us to see and interact with our data, thus reducing and simplifying complex queries.
+3.MongoDB on Linux: Installing and maintaining MongoDB on Linux systems while ensuring best performance and safety.
+4.Data Retrieval: I'm smoothing my database management and manipulation skills by creating effective commands to obtain data from MongoDB.
+
+
+1.test ->empty database / temporary database
+
+2.use dbsname ->variable name / database name ->can make temporary db if it do not exist
+
+3.show collections -> show all the connections
+
+4.delete a collection -> db.collection_name.drop()
+
+5.show dbs -> shows the database lists
+
+6.create a collection ->db. createCollection("Firstapple")
+
+7.use database_name ->to switch from one database to another database
+
+8.example -> use apple
+             show collections
+             show dbs
+             db.createCollection("first")
+
+9.to show the files-> db.users.find() collections ka data show hoga
+
+10.Queries Commands
+   db.users.find({gender:"Male"})
+   db.users.find({role:"admin"})
+   db.users.find({age:28})
+   db.users.find({gender:"Male",city:"Hyderabad"})
+   db.users.find({gender:"Male",city:"Hyderabad",salary:450000})
+   db.users.find.count()
+   db.users.find.({role:"customer", lastName:\Karamchandani\})
+   db.users.find.({username:/^A/})
+   db.users.find({username:{$regex:"^A",$options:"i"}})
+   db.users.find({skills:"Python"})
+   db.users.find({username:/^R/})
+   db.users.find({skills:{$all:["Java","Spring","Hibernate"]}})
+   db.users.find({skills:{$in:["Java"],$nin:["Spring","Hibernate"]}})
+   db.users.find({username:/ma$/})
+   db.users.find({role:"customer",lastName:/Patel/})
+   db.users.find({useremail:{$exists:/^regexsoftware.com/}})
+   db.users.find({useremail:{$not:/^gmail.com/}})
+   db.users.find({username:{$not:/^Singh/}})
+   db.users.find({role:"admin" , firstName:/^R/})
+   db.users.find({role:"admin" , skills:"SQL"})
+   db.users.find({role:"admin" , skills:"React"})
+   db.users.find({role:"customer" , lastName:/^M/})
+   db.users.find({role:"customer" ,useremail:{$not:/@gmail.com/}})
+   db.users.find({gender:"Female",skills:"Python"})
+
+11. Operators
+    $all  find({skills:{$all:["Java","Python"]}})
+    $gt   greater than
+    $eq   equals
+    $lt   less than
+    $lte  less than equals
+    $or
+    $nin  not in db.users.find({skills:"Java",skills:{$nin:["Spring","Hibernate"]}})
+    $ne   db.users.find({skills:"Java",skills:{$ne:"Python"}})
+    $in   in
+    $exists
+    $at
+    $regex
+    $gte   greater than equals
+    $and   find({$and:[ {skills:"Java"} , {skills :"Python"}]})
+    
+12.db.users.find("skills.2":{$exists:true})   atleast 1
+
+    
+    
